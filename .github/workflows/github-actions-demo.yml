@@ -16,4 +16,4 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
-      - run: echo "🎉 ${{ vars.K_AZHI }}  $AZHI_ENV.K1 $K1"
+      - run: echo "🎉 ${{ vars.K_AZHI }}  ${{ env.AZHI_ENV.K1}} ${{env.K1}}"
