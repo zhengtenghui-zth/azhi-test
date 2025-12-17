@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: production  # ← 关键：引用已配置审批人的 environment
     env:
-      switch: ${{ env.switch }}
+      switch: $SWITCH
     steps:
       # 获取代码(这样可以运行储存库中你写的代码)
       - uses: actions/checkout@v4
