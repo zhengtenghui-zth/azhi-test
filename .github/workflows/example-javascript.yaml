@@ -6,6 +6,7 @@ on:
 jobs:
   run-javascript:
     runs-on: ubuntu-latest
+    environment: production  # ← 关键：引用已配置审批人的 environment
     steps:
       # 获取代码(这样可以运行储存库中你写的代码)
       - uses: actions/checkout@v4
@@ -17,7 +18,6 @@ jobs:
           node-version: latest #action入参
       # 运行 JS 代码
       - name: Run JavaScript
-        environment: production  # ← 关键：引用已配置审批人的 environment
         id: Run-JavaScript
         run: node ./.github/workflows/example/javascript.js arg1_value arg2_value
         env:
