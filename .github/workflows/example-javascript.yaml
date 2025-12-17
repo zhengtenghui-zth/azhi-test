@@ -14,9 +14,10 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: latest
+          node-version: latest #action入参
       # 运行 JS 代码
       - name: Run JavaScript
+        environment: production  # ← 关键：引用已配置审批人的 environment
         id: Run-JavaScript
         run: node ./.github/workflows/example/javascript.js arg1_value arg2_value
         env:
@@ -25,5 +26,5 @@ jobs:
       # 打印输出
       - name: Echo output of js
         run: |
-          echo ${{ steps.Run-JavaScript.outputs.output1 }}
-          echo ${{ steps.Run-JavaScript.outputs.output2 }}
+          echo ${{ steps.Run-JavaScript.outputs.output1 }} #获取Run-JavaScript的输出
+          echo ${{ steps.Run-JavaScript.outputs.output2 }} #获取Run-JavaScript的输出
