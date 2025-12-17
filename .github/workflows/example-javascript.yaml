@@ -5,7 +5,7 @@ on:
 
 jobs:
   run-javascript:
-    if: ${{ switch == 'on' }}
+    if: ${{ env.switch == 'on' }}
     runs-on: ubuntu-latest
     environment: production  # ← 关键：引用已配置审批人的 environment
     env:
